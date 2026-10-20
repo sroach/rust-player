@@ -56,6 +56,83 @@ The server starts at `http://localhost:3001` and serves:
 - API: `http://localhost:3001/api/stations`
 - Frontend: `http://localhost:3001/` (static files from `frontend/dist/`)
 
+## Downloading a Release
+
+Pre-built binaries are available on the [Releases page](https://github.com/steveroach/radio-player/releases).
+
+### Linux (x86_64)
+
+```bash
+# Download and extract
+curl -LO https://github.com/steveroach/radio-player/releases/latest/download/radio-server-x86_64-unknown-linux-gnu.tar.gz
+tar xzf radio-server-x86_64-unknown-linux-gnu.tar.gz
+
+# Make executable and run
+chmod +x radio-server
+./radio-server
+```
+
+### Linux (ARM64 / aarch64)
+
+```bash
+# Download and extract
+curl -LO https://github.com/steveroach/radio-player/releases/latest/download/radio-server-aarch64-unknown-linux-gnu.tar.gz
+tar xzf radio-server-aarch64-unknown-linux-gnu.tar.gz
+
+# Make executable and run
+chmod +x radio-server
+./radio-server
+```
+
+### macOS (Apple Silicon)
+
+```bash
+# Download and extract
+curl -LO https://github.com/steveroach/radio-player/releases/latest/download/radio-server-aarch64-apple-darwin.tar.gz
+tar xzf radio-server-aarch64-apple-darwin.tar.gz
+
+# Make executable and run
+chmod +x radio-server
+./radio-server
+```
+
+### macOS (Intel)
+
+```bash
+# Download and extract
+curl -LO https://github.com/steveroach/radio-player/releases/latest/download/radio-server-x86_64-apple-darwin.tar.gz
+tar xzf radio-server-x86_64-apple-darwin.tar.gz
+
+# Make executable and run
+chmod +x radio-server
+./radio-server
+```
+
+### Windows
+
+```powershell
+# Download
+Invoke-WebRequest -Uri "https://github.com/steveroach/radio-player/releases/latest/download/radio-server-x86_64-pc-windows-msvc.zip" -OutFile "radio-server.zip"
+
+# Extract and run
+Expand-Archive -Path "radio-server.zip" -DestinationPath "."
+.\radio-server\radio-server.exe
+```
+
+### Running the Server
+
+After downloading, place the `radio-server` binary in the project root (next to the `frontend/dist/` directory), then run it:
+
+```bash
+./radio-server
+```
+
+The server starts at `http://localhost:3001` and serves:
+- **Web UI**: `http://localhost:3001/`
+- **API**: `http://localhost:3001/api/stations`
+
+> **Note:** The server serves the frontend from `frontend/dist/` relative to the current working directory. Make sure the `frontend/dist/` directory exists, or build it first using the development instructions below.
+
 ## Deployment
 
 ### Option 1: Single binary deployment
