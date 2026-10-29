@@ -249,5 +249,18 @@ pub fn get_stations() -> Vec<RadioStation> {
             type_: vec!["Bollywood".to_string(), "Pop".to_string()],
             image_resource: Some("radio_icon".to_string()),
         },
+        RadioStation {
+
+            index: 30,
+            url: "https://roach.gy/radio/radio.mp3".to_string(),
+            label: "Roach FM".to_string(),
+            type_: vec![
+            "Soca".to_string(),
+            "Pop".to_string(),
+            "Reggae".to_string()
+            ],
+            image_resource: Some("radio_icon".to_string()),
+
+        }
     ]
 }
